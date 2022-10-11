@@ -1,0 +1,27 @@
+﻿<!--logo-->
+<img src="../assets/logo.jpg" class="imgLogo" alt="Logo"/>
+
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="user">
+	<div class="navbar-nav">
+		<a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+		<a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>
+		<a class="nav-item nav-link" routerLink="/room" routerLinkActive="active">Room</a>
+		<a class="nav-item nav-link" routerLink="#" routerLinkActive="active">Notification</a>
+		<a class="nav-item nav-link" (click)="logout()">Logout</a>
+	</div>
+</nav>
+
+<!-- main app container -->
+<div class="app-container" [ngClass]="{ 'bg-light': user }">
+	<alert></alert>
+	<router-outlet></router-outlet>
+</div>
+
+<!-- footer -->
+<div id="footer">
+	<div class="text-center mt-4">
+		<p>&copy; 2022 HMS. All Rights Reserved | 
+			Design by <a href="https://www.resrequest.com/" target="_blank">ResRequest</a></p>
+	</div>
+</div>
